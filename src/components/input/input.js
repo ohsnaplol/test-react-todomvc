@@ -29,7 +29,7 @@ class Input extends React.Component {
   render() {
     return (
       <form className='input-group mb-3'>
-        <input value={this.state.value} onChange={this.handleChange} type='text' className='form-control' placeholder='What do you have to do?' />
+        <input value={this.state.value} onChange={this.handleChange} type='text' className='form-control' placeholder='What do you have to do?' autoFocus/>
         <div className='input-group-append'>
           <button className='btn btn-outline-secondary' type='submit' onClick={this.handleSubmit}>+</button>
         </div>
