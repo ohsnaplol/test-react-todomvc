@@ -15,11 +15,14 @@ class App extends Component {
   }
 
   addItem(text) {
-    let newItems = this.state.items
-    newItems.push(text)
-    this.setState({
-      items: newItems
-    })
+    let input = text.trim()
+    if(input) {
+      let newItems = this.state.items
+      newItems.push(input)
+      this.setState({
+        items: newItems
+      })
+    }
   }
 
   deleteItem(index) {
