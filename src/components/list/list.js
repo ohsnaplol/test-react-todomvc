@@ -29,6 +29,7 @@ class List extends React.Component {
         </h2>
         {this.props.items.length > 0 &&
           <div className="border border-primary rounded">
+          <h3>List section</h3>
             <ul className='list-group'>
               {this.itemRender(items)}
             </ul>
