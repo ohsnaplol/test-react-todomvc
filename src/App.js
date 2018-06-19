@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className='App'>
         <header className='App-header'>
-          <h1 className='App-title'>To-do List</h1>
+          <h1>To-do List</h1>
         </header>
         <div className='container mt-4'>
           <Input add={this.addItem}/>
