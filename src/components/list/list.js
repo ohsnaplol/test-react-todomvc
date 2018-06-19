@@ -1,4 +1,5 @@
 import React from 'react'
+import './style.css'
 
 class List extends React.Component {
 
@@ -8,10 +9,10 @@ class List extends React.Component {
 
   itemRender() {
     return (
-      this.props.items.map((item, index) => 
-        <li className='list-group-item' key={index}>
+      this.props.items.map((item, index) =>
+        <li className='list-group-item todo-item' key={index}>
           {item}
-          <button className='btn btn-danger float-right' onClick={() => this.deleteItem(index)}>X</button>
+          <button className='btn btn-sm btn-danger float-right destroy-item' onClick={() => this.deleteItem(index)}>X</button>
         </li>
       )
     )
@@ -21,9 +22,19 @@ class List extends React.Component {
     const items = this.props
 
     return (
-      <ul className='list-group'>
-        {this.itemRender(items)}
-      </ul>
+      <div>
+        <h2>
+          <strong>{this.props.items.length} </strong>
+          {this.props.items.length === 1 ? (<span>Item</span>) : (<span>Items</span>)}
+        </h2>
+        {this.props.items.length > 0 &&
+          <div className="border border-primary rounded">
+            <ul className='list-group'>
+              {this.itemRender(items)}
+            </ul>
+          </div>
+        }
+      </div>
     )
   }
 }
