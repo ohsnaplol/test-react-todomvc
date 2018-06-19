@@ -9,9 +9,9 @@ class List extends React.Component {
   itemRender() {
     return (
       this.props.items.map((item, index) => 
-        <li className="list-group-item" key={index}>
+        <li className='list-group-item' key={index}>
           {item}
-          <button className="btn btn-danger" onClick={() => this.deleteItem(index)}>X</button>
+          <button className='btn btn-danger float-right' onClick={() => this.deleteItem(index)}>X</button>
         </li>
       )
     )
@@ -21,7 +21,7 @@ class List extends React.Component {
     const items = this.props
 
     return (
-      <ul className="list-group">
+      <ul className='list-group'>
         {this.itemRender(items)}
       </ul>
     )

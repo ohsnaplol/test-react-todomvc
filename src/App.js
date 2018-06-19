@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Input from "./components/input/input.js"
-import List from "./components/list/list.js"
+import Input from './components/input/input.js'
+import List from './components/list/list.js'
 import './App.css';
 
 class App extends Component {
@@ -32,11 +32,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">To-do List</h1>
+      <div className='App'>
+        <header className='App-header'>
+          <h1 className='App-title'>To-do List</h1>
         </header>
-        <div className="container mt-4">
+        <div className='container mt-4'>
           <Input add={this.addItem}/>
           <List items={this.state.items} deleteItem={this.deleteItem}/>
         </div>
