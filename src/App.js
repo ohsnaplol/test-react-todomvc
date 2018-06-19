@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Input from "./components/input/input.js"
+import List from "./components/list/list.js"
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      items: []
+    }
+
+    this.addItem = this.addItem.bind(this)
+    this.deleteItem = this.deleteItem.bind(this)
+  }
+
+  addItem(text) {
+    let newItems = this.state.items
+    newItems.push(text)
+    this.setState({
+      items: newItems
+    })
+  }
+
+  deleteItem(index) {
+    let newItems = this.state.items
+    newItems.splice(index, 1)
+    this.setState({
+      items: newItems
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">To-do List</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="container mt-4">
+          <Input add={this.addItem}/>
+          <List items={this.state.items} deleteItem={this.deleteItem}/>
+        </div>
       </div>
     );
   }
