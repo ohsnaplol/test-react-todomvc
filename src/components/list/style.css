@@ -1,0 +1,7 @@
+.destroy-item {
+  display: none;
+}
+
+.todo-item:hover .destroy-item {
+  display: block;
+}
